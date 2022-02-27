@@ -13,6 +13,7 @@ import {
 
 const buyQuotes = [
   ["Get Your Waffle", "🧇"],
+  ["Here's Some Sweet Waffle", "🍰"],
   ["Eat Your Waffle", "🍽️"],
   ["Waffle Goes In", "↙️"],
   ["Come On! Let's Pump Some Waffle", "💪"],
@@ -20,6 +21,7 @@ const buyQuotes = [
 const sellQuotes = [
   ["Get Your Ethereum", "🪙"],
   ["Dump Your Waffle", "🤮"],
+  ["Sure you wanna say goodbye to Waffles?", "🥺"],
   ["Waffle Goes Out", "↗️"],
   ["Hate to see you dump waffle", "😿"],
 ];
