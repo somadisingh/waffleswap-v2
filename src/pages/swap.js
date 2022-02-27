@@ -47,7 +47,7 @@ const SellForm = () => {
       <TokenBox logo={waffles} ticker="WFL" alt="wfl logo" />
       <TokenBox logo={ethereum} ticker="ETH" alt="eth logo" disabled={true} />
       <div className="float-right">
-        <Label>1 WFL = 0.001 ETH</Label>
+        <Label>1 WFL = 0.01 ETH</Label>
       </div>
       <FullButton emoji={sellQuotes[idx][1]}>{sellQuotes[idx][0]}</FullButton>
     </div>
