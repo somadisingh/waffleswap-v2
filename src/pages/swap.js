@@ -62,7 +62,7 @@ export default function Exchange() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="md:container md:w-2/5 space-y-4 mt-40 mb-10 mx-4">
+      <div className="md:container md:w-2/5 space-y-4 mt-24 mb-10 mx-4">
         <BuySellSwitch state={state} setState={setState}>
           Buy
         </BuySellSwitch>
