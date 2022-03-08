@@ -4,16 +4,16 @@ import Image from "next/image";
 export const TokenBox = (props) => {
   return (
     <div
-      className={`flex items-center w-full h-24 p-4 border text-3xl rounded-3xl text-gray-700 mb-3 bg-white/75 `}
+      className={`flex items-center w-full h-24 p-4  text-3xl rounded-3xl text-gray-700 mb-3 bg-gray-600/75 `}
     >
       <input
         type="text"
-        className="w-4/5 focus:outline-none bg-transparent"
+        className="w-4/5 focus:outline-none bg-transparent text-white"
         placeholder="0.0"
         onChange={props.onChange}
         {...props}
       />
-      <div className="w-1/5 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl text-xl text-bold float-right p-2 flex items-center justify-center gap-1">
+      <div className="w-1/5 h-16 bg-gradient-to-r rounded-2xl text-xl font-semibold float-right p-2 flex items-center justify-center gap-1 text-white">
         <div className="w-1/2">
           <Image src={props.logo} alt={props.alt} />
         </div>
@@ -28,14 +28,14 @@ export const FullButton = (props) => {
     <button
       type="button"
       {...props}
-      className={`h-16 w-full px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-blue-900 bg-blue-400  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
+      className={`h-16 w-full px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-purple-900 bg-purple-500  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
         props.disabled && "cursor-not-allowed"
-      } ${!props.disabled && "hover:bg-blue-700 hover:text-blue-300"}`}
+      } ${!props.disabled && "hover:bg-purple-700 hover:text-purple-300"}`}
       disabled={props.disabled}
     >
       {props.loading && (
         <svg
-          className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-700"
+          className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-700"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -62,9 +62,9 @@ export const FullButton = (props) => {
 
 export const BuySellSwitch = ({ state, setState }) => {
   let onClass =
-    "h-14 px-4 py-2 border border-transparent font-bold text-lg text-center text-blue-300 bg-blue-700 focus:outline-none transition ease-in-out";
+    "h-14 px-4 py-2 border border-transparent font-bold text-lg text-center text-purple-400 bg-purple-900 focus:outline-none transition ease-in-out";
   let offClass =
-    "h-14 px-4 py-2 border border-transparent font-bold text-lg text-center text-blue-900 bg-blue-300 focus:outline-none transition ease-in-out";
+    "h-14 px-4 py-2 border border-transparent font-bold text-lg text-center text-purple-900 bg-purple-500 focus:outline-none transition ease-in-out";
 
   return (
     <div className="p-2 flex items-center justify-start gap-1">
@@ -95,7 +95,7 @@ export const Button = (props) => {
     <button
       type="button"
       {...props}
-      className={`h-16 px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-blue-900 bg-blue-300 hover:bg-blue-700 hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
+      className={`h-16 px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-purple-900 bg-purple-500 hover:bg-purple-700 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
         props.disabled && "cursor-not-allowed"
       }`}
       disabled={props.disabled}
@@ -146,7 +146,7 @@ export const Paper = (props) => {
 export const Label = (props) => {
   return (
     <div className=" text-md md:text-lg mb-2">
-      <span className="text-gray-600 font-semibold">{props.children}</span>{" "}
+      <span className="text-white font-semibold">{props.children}</span>{" "}
     </div>
   );
 };
@@ -155,7 +155,7 @@ export const Textbox = (props) => {
   return (
     <input
       type="text"
-      className="w-full p-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-600 mb-3"
+      className="w-full p-2 border rounded-md text-gray-700 focus:outline-none focus:border-purple-600 mb-3"
       {...props}
     />
   );
@@ -165,7 +165,7 @@ export const Textarea = (props) => {
   return (
     <textarea
       type="text"
-      className="w-full resize-none mt-1 p-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-600"
+      className="w-full resize-none mt-1 p-2 border rounded-md text-gray-700 focus:outline-none focus:border-purple-600"
       rows="7"
       {...props}
     />

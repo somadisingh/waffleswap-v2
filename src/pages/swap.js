@@ -10,6 +10,7 @@ import {
   TokenBox,
   FullButton,
 } from "../components/ui";
+import { BuyForm, SellForm } from "../components/forms";
 
 const buyQuotes = [
   ["Get Your Waffle", "🧇"],
@@ -26,139 +27,13 @@ const sellQuotes = [
   ["Hate to see you dump waffle", "😿"],
 ];
 
-const BuyForm = (props) => {
-  const [isValid, setIsValid] = useState(false);
-  const [value, setValue] = useState(null);
-
-  return (
-    <div>
-      <div className="float-right">
-        <Label>Balance: {props.ethBalance} ETH</Label>
-      </div>
-      <TokenBox
-        logo={ethereum}
-        ticker="ETH"
-        alt="eth logo"
-        value={value}
-        onChange={(e) => {
-          // console.log(e.target.value);
-          let val = e.target.value;
-
-          if (val.length > 0) {
-            if (!/([0-9.])$/.test(val)) {
-              console.log("go away");
-              setIsValid(false);
-            } else {
-              setIsValid(true);
-              setValue(val);
-            }
-          } else {
-            setIsValid(true);
-            setValue(null);
-          }
-        }}
-        isInValid={!isValid || value === 0.0}
-      />
-
-      <div className="float-right">
-        <Label>Balance: {props.wflBalance} WFL</Label>
-      </div>
-      <TokenBox
-        logo={waffles}
-        ticker="WFL"
-        alt="wfl logo"
-        value={value * 100}
-      />
-
-      <div className="float-left">
-        <Label>Exchange Rate:</Label>
-      </div>
-      <div className="float-right">
-        <Label>1 ETH = 100 WFL</Label>
-      </div>
-
-      <FullButton emoji="🔃" disabled={!isValid || !value}>
-        SWAP
-      </FullButton>
-    </div>
-  );
-};
-
-const SellForm = (props) => {
-  const [isValid, setIsValid] = useState(false);
-  const [value, setValue] = useState(null);
-
-  return (
-    <div>
-      <div className="float-right">
-        <Label>Balance: {props.wflBalance} WFL</Label>
-      </div>
-      <TokenBox
-        logo={waffles}
-        ticker="WFL"
-        alt="wfl logo"
-        value={value}
-        onChange={(e) => {
-          // console.log(e.target.value);
-          let val = e.target.value;
-
-          if (val.length > 0) {
-            if (!/([0-9.])$/.test(val)) {
-              console.log("go away");
-              setIsValid(false);
-            } else {
-              setIsValid(true);
-              setValue(val);
-            }
-          } else {
-            setIsValid(true);
-            setValue(null);
-          }
-        }}
-        isInValid={!isValid || value === 0.0}
-      />
-
-      <div className="float-right">
-        <Label>Balance: {props.ethBalance} ETH</Label>
-      </div>
-      <TokenBox
-        logo={ethereum}
-        ticker="ETH"
-        alt="eth logo"
-        disabled={true}
-        value={value / 100}
-      />
-
-      <div className="float-left">
-        <Label>Exchange Rate:</Label>
-      </div>
-      <div className="float-right">
-        <Label>1 WFL = 0.01 ETH</Label>
-      </div>
-
-      <FullButton emoji="🔃" disabled={!isValid || !value}>
-        SWAP
-      </FullButton>
-    </div>
-  );
-};
-
 export default function Exchange() {
-  // const [buyQuote, setBuyQuote] = useState(null);
-  // const [sellQuote, setSellQuote] = useState(null);
-
   const [state, setState] = useState("buy");
   const [ethBalance, setEthBalance] = useState(0);
   const [wflBalance, setWflBalance] = useState(0);
   const [address, setAddress] = useState(
     "0x65A164262EE90CfF307D699092ab84ddd316D928"
   );
-
-  // useEffect(() => {
-  //   let idx = Math.floor(Math.random() * buyQuotes.length);
-  //   setBuyQuote(buyQuotes[idx]);
-  //   setSellQuote(sellQuotes[idx]);
-  // }, []);
 
   return (
     <div>
@@ -169,17 +44,17 @@ export default function Exchange() {
       </Head>
 
       <div className="flex justify-end">
-        <div className="mt-2 mr-2 p-2 rounded-2xl text-blue-900 bg-blue-400 font-bold text-xl text-center">
+        <div className="mt-2 mr-2 p-2 rounded-2xl text-purple-900 bg-purple-500 font-bold text-xl text-center">
           {address.slice(0, 6)}...
           {address.slice(address.length - 4, address.length)}
         </div>
       </div>
 
-      <div className="md:container md:w-2/5 space-y-4 mt-24 mb-10 mx-4">
+      <div className="md:container md:w-2/5 space-y-4 mt-10 mb-10 mx-4">
         <BuySellSwitch state={state} setState={setState}>
           Buy
         </BuySellSwitch>
-        <div className="w-xl p-6 text-left rounded-3xl shadow-lg backdrop-blur-3xl bg-white/50">
+        <div className="w-xl p-6 text-left rounded-3xl shadow-lg backdrop-blur-3xl bg-gray-600/25">
           {state == "buy" ? (
             <BuyForm ethBalance={ethBalance} wflBalance={wflBalance} />
           ) : (

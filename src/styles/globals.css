@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-r from-amber-200 via-purple-200 to-rose-200;
+  /* @apply bg-gradient-to-r from-amber-200 via-purple-200 to-rose-200; */
+  @apply bg-gradient-to-r from-[#3b4260] to-[#401e3c];
 }
