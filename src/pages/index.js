@@ -16,11 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <h1 className="text-2xl text-white-100">Landing Page</h1>
-      <Link href="/swap">Enter App</Link> */}
       <div className="flex justify-between">
         <div
-          className="mt-2 ml-2 cursor-pointer flex items-center"
+          className="mt-5 ml-5 cursor-pointer flex items-center"
           onClick={() => router.push("/")}
         >
           <Image src={waffles} alt="Logo" width="50" height="50" />{" "}
@@ -28,7 +26,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:container md:w-4/5 md:mt-[35vh] m-10 text-white flex justify-between gap-5">
+      <div className="md:container md:w-4/5 md:mt-[30vh] m-10 text-white flex justify-between gap-5">
         <div className="space-y-4">
           <div className="text-6xl font-bold">
             A Decentralized Exchange on Ethereum.

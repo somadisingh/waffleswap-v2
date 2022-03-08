@@ -46,7 +46,7 @@ export default function Exchange() {
 
       <div className="flex justify-between items-start">
         <div
-          className="mt-2 ml-2 cursor-pointer flex items-center"
+          className="mt-5 ml-5 cursor-pointer flex items-center"
           onClick={() => router.push("/")}
         >
           <Image src={waffles} alt="Logo" width="50" height="50" />{" "}
@@ -58,7 +58,7 @@ export default function Exchange() {
         </div>
       </div>
 
-      <div className="md:container md:w-2/5 space-y-4 mt-10 mb-10 mx-4">
+      <div className="md:container md:w-2/5 md:mt-10 space-y-4 mx-4">
         <BuySellSwitch state={state} setState={setState}>
           Buy
         </BuySellSwitch>
