@@ -3,11 +3,14 @@ import Image from "next/image";
 
 export const TokenBox = (props) => {
   return (
-    <div className="flex items-center w-full h-24 p-4 border text-3xl rounded-3xl text-gray-700 mb-3 bg-white/75">
+    <div
+      className={`flex items-center w-full h-24 p-4 border text-3xl rounded-3xl text-gray-700 mb-3 bg-white/75 `}
+    >
       <input
         type="text"
         className="w-4/5 focus:outline-none bg-transparent"
         placeholder="0.0"
+        onChange={props.onChange}
         {...props}
       />
       <div className="w-1/5 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl text-xl text-bold float-right p-2 flex items-center justify-center gap-1">
@@ -25,12 +28,12 @@ export const FullButton = (props) => {
     <button
       type="button"
       {...props}
-      className={`h-16 w-full px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-blue-900 bg-blue-400 hover:bg-blue-700 hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
+      className={`h-16 w-full px-4 py-2 border border-transparent font-bold text-xl text-center rounded-2xl text-blue-900 bg-blue-400  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition ease-in-out duration-200 ${
         props.disabled && "cursor-not-allowed"
-      }`}
+      } ${!props.disabled && "hover:bg-blue-700 hover:text-blue-300"}`}
       disabled={props.disabled}
     >
-      {props.disabled && (
+      {props.loading && (
         <svg
           className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-700"
           xmlns="http://www.w3.org/2000/svg"
