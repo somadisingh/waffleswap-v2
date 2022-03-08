@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import ethereum from "../../public/ethereum.png";
+import { useRouter } from "next/router";
 import waffles from "../../public/waffles.png";
 import {
   Button,
@@ -28,6 +28,7 @@ const sellQuotes = [
 ];
 
 export default function Exchange() {
+  const router = useRouter();
   const [state, setState] = useState("buy");
   const [ethBalance, setEthBalance] = useState(0);
   const [wflBalance, setWflBalance] = useState(0);
@@ -43,7 +44,14 @@ export default function Exchange() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex justify-end">
+      <div className="flex justify-between items-start">
+        <div
+          className="mt-2 ml-2 cursor-pointer flex items-center"
+          onClick={() => router.push("/")}
+        >
+          <Image src={waffles} alt="Logo" width="50" height="50" />{" "}
+          <span className="font-bold text-white text-xl">WaffleSwap</span>
+        </div>
         <div className="mt-2 mr-2 p-2 rounded-2xl text-purple-900 bg-purple-500 font-bold text-xl text-center">
           {address.slice(0, 6)}...
           {address.slice(address.length - 4, address.length)}

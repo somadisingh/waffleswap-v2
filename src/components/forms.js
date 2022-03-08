@@ -56,7 +56,7 @@ export const BuyForm = (props) => {
       </div>
 
       <FullButton emoji="🔃" disabled={!isValid || !value}>
-        SWAP
+        SWAP{" "}
       </FullButton>
     </div>
   );
