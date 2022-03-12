@@ -11,7 +11,9 @@ export const BuyForm = (props) => {
   return (
     <div>
       <div className="float-right">
-        <Label>Balance: {props.ethBalance} ETH</Label>
+        <Label>
+          Balance: {(props.ethBalance / 1000000000000000000).toFixed(2)} ETH
+        </Label>
       </div>
       <TokenBox
         logo={ethereum}
@@ -39,7 +41,9 @@ export const BuyForm = (props) => {
       />
 
       <div className="float-right">
-        <Label>Balance: {props.wflBalance} WFL</Label>
+        <Label>
+          Balance: {(props.wflBalance / 1000000000000000000).toFixed(2)} WFL
+        </Label>
       </div>
       <TokenBox
         logo={waffles}
@@ -55,7 +59,13 @@ export const BuyForm = (props) => {
         <Label>1 ETH = 100 WFL</Label>
       </div>
 
-      <FullButton emoji="🔃" disabled={!isValid || !value}>
+      <FullButton
+        emoji="🔃"
+        disabled={!isValid || !value || props.loading}
+        onClick={() => {
+          props.onBuy(value);
+        }}
+      >
         SWAP{" "}
       </FullButton>
     </div>
@@ -69,7 +79,9 @@ export const SellForm = (props) => {
   return (
     <div>
       <div className="float-right">
-        <Label>Balance: {props.wflBalance} WFL</Label>
+        <Label>
+          Balance: {(props.wflBalance / 1000000000000000000).toFixed(2)} WFL
+        </Label>
       </div>
       <TokenBox
         logo={waffles}
@@ -97,7 +109,9 @@ export const SellForm = (props) => {
       />
 
       <div className="float-right">
-        <Label>Balance: {props.ethBalance} ETH</Label>
+        <Label>
+          Balance: {(props.ethBalance / 1000000000000000000).toFixed(2)} ETH
+        </Label>
       </div>
       <TokenBox
         logo={ethereum}
@@ -114,7 +128,13 @@ export const SellForm = (props) => {
         <Label>1 WFL = 0.01 ETH</Label>
       </div>
 
-      <FullButton emoji="🔃" disabled={!isValid || !value}>
+      <FullButton
+        emoji="🔃"
+        disabled={!isValid || !value || props.loading}
+        onClick={() => {
+          props.onSell(value);
+        }}
+      >
         SWAP
       </FullButton>
     </div>
