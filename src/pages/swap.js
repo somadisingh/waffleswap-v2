@@ -102,15 +102,14 @@ export default function Exchange() {
     }
   };
 
-  const buyTokens = (value) => {
+  const buyTokens = async (value) => {
     let etherAmount = window.web3.utils.toWei(value, "Ether");
-    waffleSwap.methods
+    let hash = await waffleSwap.methods
       .buyTokens()
-      .send({ value: etherAmount, from: address })
-      .on("transactionHash", (hash) => {
-        console.log(hash);
-        loadBlockchainData();
-      });
+      .send({ value: etherAmount, from: address });
+    console.log(hash);
+
+    await loadBlockchainData();
   };
 
   const sellTokens = async (value) => {
