@@ -11,6 +11,13 @@ WaffleSwap is a DEX built on ethereum with a custom token called Waffle Coin. Yo
 3. Truffle and Web3.js for building and testing Smart Contracts
 4. Solidity for defining the Smart Contracts backend
 
+## How to run:
+1. Clone the repo and install the required dependencies using "yarn -install"
+2. Download [Ganache Suite](https://trufflesuite.com/ganache/index.html)
+3. Install [Metamask](https://metamask.io/) for your browser
+4. Create a custom RPC server in Metamask and copy the RPC URL from ganache. Chain ID is 1337. (For RPC: Either 7545 or 8545 should work)
+5. With ganache running and metamask on stand-by, run command "npm run start" in the repo folder. 
+
 ### [Click Here to Checkout the Demo Video](https://drive.google.com/file/d/1jOtR8McN3XfYdVrPisttgKcJSZ2Mq5nJ/view?usp=sharing)
 
 ## Screenshots
