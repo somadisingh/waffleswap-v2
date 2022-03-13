@@ -18,6 +18,8 @@ WaffleSwap is a DEX built on ethereum with a custom token called Waffle Coin. Yo
 4. Create a custom RPC server in Metamask and copy the RPC URL from ganache. Chain ID is 1337. (For RPC: Either 7545 or 8545 should work)
 5. With ganache running and metamask on stand-by, run command "npm run start" in the repo folder. 
 
+### [Connect Metamask and Ganache](https://www.youtube.com/watch?v=lv4HEyiw4EQ)
+
 ### [Click Here to Checkout the Demo Video](https://drive.google.com/file/d/1jOtR8McN3XfYdVrPisttgKcJSZ2Mq5nJ/view?usp=sharing)
 
 ## Screenshots
