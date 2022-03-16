@@ -32,8 +32,8 @@ export default function Home() {
             A Decentralized Exchange on Ethereum.
           </div>
           <div className="text-2xl">
-            WaffleSwap is a native, scalable decentralized exchange and
-            automated liquidity provision protocol.
+            WaffleSwap is a decentralized exchange on Ethereum built for
+            performance and simplicity.
           </div>
           <button
             type="button"
