@@ -15,9 +15,10 @@ WaffleSwap is a DEX built on ethereum with a custom token called Waffle Coin. Yo
 1. Clone the repo and install the required dependencies using "yarn -install"
 2. Download [Ganache Suite](https://trufflesuite.com/ganache/index.html)
 3. Install [Metamask](https://metamask.io/) for your browser
-4. Create a custom RPC server in Metamask and copy the RPC URL from ganache. Chain ID is 1337. (For RPC: Either 7545 or 8545 should work)
+4. Create a custom RPC server in Metamask and copy the RPC URL from ganache. Chain ID is 1337. (For RPC: Either 7545 or 8545 should work). (Custom server should already exist on Metamask, delete that.)
 5. Import test accounts from Ganache to Metamask by copying the account private keys from Ganache and import on Metamask via private key option.
-6. With ganache running and metamask on stand-by, run command "npm run start" in the repo folder.
+6. With ganache running and metamask on stand-by, run cmd command "truffle migrate --reset" in the folder. This migrates all the contracts over to the blockchain. Then run command "truffle test". This command tests all the smart contracts to ensure their integrity.
+7. After both the commands execute successfully, run command "yarn dev" to start the project.
 
 ### [Connect Metamask and Ganache](https://www.youtube.com/watch?v=lv4HEyiw4EQ)
 
