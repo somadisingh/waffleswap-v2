@@ -29,6 +29,6 @@ WaffleSwap is a DEX built on ethereum with a custom token called Waffle Coin. Yo
 ![image](https://user-images.githubusercontent.com/78269625/158023112-528a4f51-dd22-4a18-a3f7-75dfadb5a794.png)
 
 The repo is now deployed to the following links, thanks to @ditholease:
-[Link 1](dex-xi-six.vercel.app)
-[Link 2](dex-ditholease.vercel.app)
-[Link 3](dex-git-main-ditholease.vercel.app)
+[Link 1](https://dex-xi-six.vercel.app)
+[Link 2](https://dex-ditholease.vercel.app)
+[Link 3](https://dex-git-main-ditholease.vercel.app)
